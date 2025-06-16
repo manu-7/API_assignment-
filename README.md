@@ -10,7 +10,7 @@ This is a small backend project built using Django and Django REST Framework to 
 
 ###  Django Setup & Configuration
 - Initialized a Django project with REST Framework.
-- Project structured cleanly with separate `core` and `api` apps.
+- Project structured cleanly with separate `api` apps.
 - Environment variables handled using `python-decouple` (`.env` used for secrets like SECRET_KEY, email credentials).
 - Production-ready settings with `DEBUG=False` and allowed hosts set.
 - Email backend configured to send emails using Gmail SMTP.
