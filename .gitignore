@@ -1,0 +1,32 @@
+# Python bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Django stuff:
+*.log
+*.pot
+*.pyc
+db.sqlite3
+media/
+staticfiles/
+
+# Environment files
+.env
+.env.*
+
+# VS Code
+.vscode/
+
+# Virtualenv
+venv/
+ENV/
+env/
+
+# Celery
+celerybeat-schedule
+celerybeat.pid
+
+# OS files
+.DS_Store
+Thumbs.db
