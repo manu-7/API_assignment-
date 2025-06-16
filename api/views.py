@@ -1,9 +1,13 @@
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework.permissions import AllowAny, IsAuthenticated
+from django.contrib.auth import login
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse
+from .serializers import RegisterSerializer
 from .tasks import send_welcome_email
+
+
 
 class PublicView(APIView):
     permission_classes = [AllowAny]  
@@ -21,12 +25,13 @@ class ProtectedView(APIView):
 def profile_view(request):
     return HttpResponse(f"Welcome {request.user.username}, this is your profile!")
 
-class SendEmailView(APIView):
-    permission_classes = [IsAuthenticated] 
+class RegisterView(APIView):
+    permission_classes = [AllowAny]
 
     def post(self, request):
-        user_email = request.user.email
-        if user_email:
-            send_welcome_email.delay(user_email) 
-            return Response({"message": f"Email task has been queued for {user_email}"})
-        return Response({"error": "User has no email address."}, status=400)
+        serializer = RegisterSerializer(data=request.data)
+        if serializer.is_valid():
+            user = serializer.save()
+            send_welcome_email.delay(user.email)
+            return Response({"message": "User registered successfully and email task queued."})
+        return Response(serializer.errors, status=400)
