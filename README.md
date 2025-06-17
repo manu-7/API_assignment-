@@ -1,29 +1,33 @@
+# 🔧 Django REST API with Celery & Telegram Bot Integration
 
-
-# 🧠 Django Telegram Bot Integration with Celery
-
-This project demonstrates how to integrate a **Telegram Bot** with a **Django REST API**, using **Celery** and **Redis** to send Telegram messages as background tasks.
+This project is a backend assignment demonstrating skills in **Django**, **Django REST Framework**, **Celery**, **Redis**, **Telegram Bot API**, and secure code management with environment-based configuration.
 
 ---
 
 ## 📌 Features
 
-- Telegram Bot collects usernames via `/start` command and stores them in Django.
-- Django Admin displays registered Telegram users.
-- On user registration (via web/API), Django sends a **welcome message** to their Telegram.
-- Celery + Redis handles message sending asynchronously.
+✅ REST API with public and protected endpoints  
+✅ Token-based Authentication  
+✅ Celery + Redis for background tasks  
+✅ Telegram Bot Integration (`/start` saves username + chat_id)  
+✅ Sends welcome message via bot when a user registers  
+✅ Django Admin Panel  
+✅ `.env`-based secure configuration  
+✅ Clean code, commits, and docs
 
 ---
 
-## 🏗️ Tech Stack
+## 🧱 Tech Stack
 
-- Django 5.2+
+- Django 5.2
 - Django REST Framework
-- Telegram Bot API (via `python-telegram-bot`)
-- Celery (Background task queue)
-- Redis (Message broker for Celery)
-- PostgreSQL/SQLite (default DB)
-- python-decouple (for environment variables)
+- Python 3.12+
+- python-telegram-bot
+- Celery
+- Redis
+- Python-decouple
+- SQLite 
+- GitHub for VCS
 
 ---
 
@@ -32,8 +36,12 @@ This project demonstrates how to integrate a **Telegram Bot** with a **Django RE
 ### 1. Clone the Repository
 
 ```bash
+git clone https://github.com/manu-7/API_assignment-.git
+cd API_assignment-
+
 git clone https://github.com/your-username/your-repo.git
 cd your-repo
  
-### 2. Create & Activate Virtual Environment
+---
+
 
