@@ -35,3 +35,5 @@ This project demonstrates how to integrate a **Telegram Bot** with a **Django RE
 git clone https://github.com/your-username/your-repo.git
 cd your-repo
  
+### 2. Create & Activate Virtual Environment
+
