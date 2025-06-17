@@ -2,10 +2,9 @@ from pathlib import Path
 import os
 from decouple import config
 
-# BASE_DIR must come first
+
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-# Load environment variables from .env
 SECRET_KEY = config('SECRET_KEY')
 
 DEBUG = True
@@ -20,11 +19,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    # 3rd party
     'rest_framework',
     'rest_framework.authtoken',
-
-    # Your apps
     'api',
 ]
 
@@ -107,3 +103,4 @@ EMAIL_PORT = config('EMAIL_PORT', cast=int)
 EMAIL_USE_TLS = config('EMAIL_USE_TLS', cast=bool)
 EMAIL_HOST_USER = config('EMAIL_HOST_USER')
 EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
+TELEGRAM_BOT_TOKEN = config("TELEGRAM_BOT_TOKEN")
